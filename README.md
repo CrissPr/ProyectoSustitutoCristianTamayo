@@ -11,9 +11,7 @@ fase-2
 
 Abrir linea de comandos y clonar:
 
-```bash
-git clone https://github.com/CrissPr/ProyectoSustitutoCristianTamayo.git
-` ``` `
+```bash git clone https://github.com/CrissPr/ProyectoSustitutoCristianTamayo.git
 
 Una vez clonado debera dirigirse al directorio fase-2 del repositorio clonado, para ello puede hacer uso de:
 
