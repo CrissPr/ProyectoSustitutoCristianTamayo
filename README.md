@@ -33,17 +33,32 @@ docker build -t imagenmodelo .
 docker run -it --name container imagenmodelo
 ```
 
-4. correr scripts
+4. Una vez adentro del container creado, correr los siguientes scripts:
 
 debera correr los scripts en el siguiente orden
 
+```bash
 python train.py
-
+```
+```bash
 python predict.py
-
+```
+```bash
 python run-scripts.py
+```
+este ultimo servira para listar las predicciones de las primeras filas.
 
-este ultimo servira para listar predicciones
+Nota: Recuerde correr primero train.py y luego predict.py , ya que train.py guardara un modelo como model.pkl , el cual sera usado posteriormente por predict.py 
+
+breve descripción de cada script:
+
+train.py: Este script carga un conjunto de datos de entrenamiento (train.csv), preprocesa los datos (rellena valores faltantes y codifica variables categóricas) y entrena un modelo de RandomForest. Luego el modelo se guarda como model.pkl
+
+predict.py: Este script carga el conjunto de datos de prueba (test.csv), lo preprocesa de manera similar a los datos de entrenamiento y utiliza el modelo previamente guardado (model.pkl) para hacer predicciones. Los resultados se guardan en un archivo predictions.csv.
+
+run-scripts.py: Este script automatiza el flujo de trabajo ejecutando primero train.py para entrenar y luego ejecutando predict.py para generar las predicciones. También muestra las primeras filas de las predicciones.
+
+
 
 
 
