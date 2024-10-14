@@ -59,7 +59,7 @@ este ultimo servira para listar las predicciones de las primeras filas.
 
 **predict.py:** Este script carga el conjunto de datos de prueba (test.csv), lo preprocesa de manera similar a los datos de entrenamiento y utiliza el modelo previamente guardado (model.pkl) para hacer predicciones. Los resultados se guardan en un archivo predictions.csv.
 
-**run-scripts.py:** Este script automatiza el flujo de trabajo ejecutando primero train.py para entrenar y luego ejecutando predict.py para generar las predicciones. También muestra las primeras filas de las predicciones.
+**run-scripts.py:** Este script automatiza el flujo de trabajo ejecutando primero train.py para entrenar y luego ejecutando predict.py para generar las predicciones. También listara las predicciones de las primeras filas.
 
 
 
