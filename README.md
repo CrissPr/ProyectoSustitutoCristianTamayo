@@ -11,7 +11,24 @@ fase-2
 
 Abrir linea de comandos y clonar:
 
-<button onclick="navigator.clipboard.writeText('This is the text you want to copy.')">Copy Text</button>
+
+## Example Section
+
+```html
+<!-- Text to be copied -->
+<pre id="copyText">This is the text you want to copy.</pre>
+<button onclick="copyToClipboard()">Copy Text</button>
+
+<script>
+function copyToClipboard() {
+  var copyText = document.getElementById("copyText").innerText;
+  navigator.clipboard.writeText(copyText).then(function() {
+    alert('Text copied to clipboard');
+  }, function(err) {
+    console.error('Could not copy text: ', err);
+  });
+}
+</script>
 
 
 git clone https://github.com/CrissPr/ProyectoSustitutoCristianTamayo.git
