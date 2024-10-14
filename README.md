@@ -11,26 +11,7 @@ fase-2
 
 Abrir linea de comandos y clonar:
 
-
-## Example Section
-
-```html
-<!-- Text to be copied -->
-<pre id="copyText">This is the text you want to copy.</pre>
-<button onclick="copyToClipboard()">Copy Text</button>
-
-<script>
-function copyToClipboard() {
-  var copyText = document.getElementById("copyText").innerText;
-  navigator.clipboard.writeText(copyText).then(function() {
-    alert('Text copied to clipboard');
-  }, function(err) {
-    console.error('Could not copy text: ', err);
-  });
-}
-</script>
-
-
+```bash
 git clone https://github.com/CrissPr/ProyectoSustitutoCristianTamayo.git
 
 Una vez clonado debera dirigirse al directorio fase-2 del repositorio clonado, para ello puede hacer uso de:
