@@ -19,11 +19,11 @@ cd (ruta-carpeta-donde-se-clonó-el-repositorio)/ProyectoSustitutoCristianTamayo
 
 2. crear imagen
 
-docker build -t imagenModelo .
+docker build -t imagenmodelo .
 
 3. crear y correr contenedor
 
-docker run -it --name container imagenModelo
+docker run -it --name container imagenmodelo
 
 4. correr scripts
 
