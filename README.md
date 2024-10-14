@@ -17,15 +17,21 @@ git clone https://github.com/CrissPr/ProyectoSustitutoCristianTamayo.git
 
 Una vez clonado debera dirigirse al directorio fase-2 del repositorio clonado, para ello puede hacer uso de:
 
+```bash
 cd (ruta-carpeta-donde-se-clonó-el-repositorio)/ProyectoSustitutoCristianTamayo/fase-2
+```
 
 2. crear imagen
 
+```bash
 docker build -t imagenmodelo .
+```
 
 3. crear y correr contenedor
 
+```bash
 docker run -it --name container imagenmodelo
+```
 
 4. correr scripts
 
