@@ -49,7 +49,7 @@ python predict.py
 ```bash
 python run-scripts.py
 ```
-este ultimo servira para listar las predicciones de las primeras filas.
+este ultimo ejecutara predicciones y permitira visualizar las predicciones de las primeras filas.
 
 **Nota:** Recuerde correr primero train.py y luego predict.py , ya que train.py guardara un modelo como model.pkl , el cual sera usado posteriormente por predict.py 
 
