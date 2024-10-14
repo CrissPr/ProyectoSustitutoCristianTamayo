@@ -13,8 +13,8 @@ Abrir linea de comandos y clonar:
 
 ```bash
 git clone https://github.com/CrissPr/ProyectoSustitutoCristianTamayo.git
+```
 
-```bash
 Una vez clonado debera dirigirse al directorio fase-2 del repositorio clonado, para ello puede hacer uso de:
 
 cd (ruta-carpeta-donde-se-clonó-el-repositorio)/ProyectoSustitutoCristianTamayo/fase-2
