@@ -102,10 +102,13 @@ python client.py
 ```
 
 
-una vez halla ejecutado python client.py en una nueva terminal podra observar desde esa terminal como efectivamente el modelo se entrena y predice.
+una vez halla ejecutado python client.py en una nueva terminal podra observar desde esa terminal como efectivamente el modelo se entrena y predice, pudiendose apreciar tambien las predicciones.
 
-Train Response: {'message': 'Model trained successfully'} \
-Predict Response: {'message': 'Predictions generated', 'predictions_file': 'predictions.csv'}
+Ejemplo de prediccion:
+
+'PassengerId,Survived', '892,0'
+
+Donde es 1 sorevivió y 0 murió.
 
 5. tambien puede provar los endpoints de la siguiente manera:
 
@@ -122,6 +125,8 @@ curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -
 ```bash
 http://localhost:5000/
 ```
+
+Se hace un ultimo commit para modificar el apirest.py ya que el anterior entrenaba y predecia, pero no imprimia las predicciones, ahora con la modificacion si es posible vizualizar las predicciones, el cual observa en los commits realizados.
 
 
 
