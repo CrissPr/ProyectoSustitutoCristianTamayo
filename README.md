@@ -101,6 +101,11 @@ docker run -it -p 5000:5000 titanic-api-test
 python client.py
 ```
 
+5. en su navegador puede ir a:
+
+```bash
+python client.py
+```
 
 
 
