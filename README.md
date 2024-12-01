@@ -101,11 +101,20 @@ docker run -it -p 5000:5000 titanic-api-test
 python client.py
 ```
 
-5. en su navegador puede ir a:
+
+
+una vez halla ejecutado python client.py en una nueva terminal podra observar desde esa terminal como efectivamente el modelo se entrena y predice.
+
+Train Response: {'message': 'Model trained successfully'}
+Predict Response: {'message': 'Predictions generated', 'predictions_file': 'predictions.csv'}
+
+5. en su navegador puede ir a http://localhost:5000/ donde encotrara un mensaje confirmando que se conectó a la API
 
 ```bash
 http://localhost:5000/
 ```
+
+
 
 
 
