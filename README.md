@@ -108,7 +108,7 @@ una vez halla ejecutado python client.py en una nueva terminal podra observar de
 Train Response: {'message': 'Model trained successfully'} \
 Predict Response: {'message': 'Predictions generated', 'predictions_file': 'predictions.csv'}
 
-5. en su navegador puede ir a http://localhost:5000/ donde encotrara un mensaje confirmando que se conectó a la API
+5. en su navegador puede ir a http://localhost:5000/ donde encontrara un mensaje de bienvenida confirmando que se conectó a la API
 
 ```bash
 http://localhost:5000/
