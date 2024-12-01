@@ -19,7 +19,7 @@ git clone https://github.com/CrissPr/ProyectoSustitutoCristianTamayo.git
 Una vez clonado debera dirigirse al directorio fase-2 del repositorio clonado, para ello puede hacer uso de:
 
 ```bash
-cd (ruta-carpeta-donde-se-clonó-el-repositorio)/ProyectoSustitutoCristianTamayo/fase-2
+cd (ruta-carpeta-donde-se-clonó-el-repositorio)\ProyectoSustitutoCristianTamayo\fase-2
 ```
 
 
@@ -77,7 +77,7 @@ git clone https://github.com/CrissPr/ProyectoSustitutoCristianTamayo.git
 Una vez clonado debera dirigirse al directorio fase-3 del repositorio clonado, para ello puede hacer uso de:
 
 ```bash
-cd (ruta-carpeta-donde-se-clonó-el-repositorio)/ProyectoSustitutoCristianTamayo/fase-3
+cd (ruta-carpeta-donde-se-clonó-el-repositorio)\ProyectoSustitutoCristianTamayo\fase-3
 ```
 
 
