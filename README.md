@@ -108,7 +108,7 @@ Ejemplo de prediccion:
 
 'PassengerId,Survived', '892,0'
 
-Donde es 1 sorevivió y 0 murió.
+Donde es 1 sobrevivió y 0 murió.
 
 5. tambien puede provar los endpoints de la siguiente manera:
 
@@ -126,7 +126,7 @@ curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -
 http://localhost:5000/
 ```
 
-Se hace un ultimo commit el cual se observa en los commits realizados, para modificar el apirest.py ya que el anterior entrenaba y predecia, pero no imprimia las predicciones, ahora con la modificacion si es posible vizualizar las predicciones, .
+Se hizó un ultimo commit el cual se observa en los commits realizados, para modificar el apirest.py ya que el anterior entrenaba y predecia, pero no imprimia las predicciones, ahora con la modificacion si es posible vizualizar las predicciones, .
 
 
 
