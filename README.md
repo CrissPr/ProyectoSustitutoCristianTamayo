@@ -104,7 +104,7 @@ python client.py
 5. en su navegador puede ir a:
 
 ```bash
-python client.py
+http://localhost:5000/
 ```
 
 
