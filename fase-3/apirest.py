@@ -16,25 +16,6 @@ def hello_world():
     return jsonify({"message": "Welcome to the Titanic Model API"})
 
 
-@app.route("/train", methods=["POST"])
-def train_model():
-    if not os.path.exists(TRAIN_DATA):
-        return jsonify({"error": f"Training data '{TRAIN_DATA}' not found"}), 400
-
-    logger.info("Starting training process...")
-    result = subprocess.run(
-        ["python", "train.py", f"--data_file={TRAIN_DATA}", f"--model_file={MODEL_FILE}", "--overwrite_model"],
-        capture_output=True,
-        text=True,
-    )
-    if result.returncode != 0:
-        logger.error(f"Training failed: {result.stderr}")
-        return jsonify({"error": result.stderr}), 500
-
-    logger.info("Training completed successfully.")
-    return jsonify({"message": "Model trained successfully"})
-
-
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.json
@@ -52,12 +33,21 @@ def predict():
         capture_output=True,
         text=True,
     )
+
     if result.returncode != 0:
         logger.error(f"Prediction failed: {result.stderr}")
         return jsonify({"error": result.stderr}), 500
 
     logger.info("Prediction completed successfully.")
-    return jsonify({"message": "Predictions generated", "predictions_file": output_file})
+
+    # Read the predictions from the output file and include them in the response
+    try:
+        with open(output_file, "r") as f:
+            predictions = f.read().strip().split("\n")  # Assuming one prediction per line
+        return jsonify({"message": "Predictions generated", "predictions": predictions})
+    except Exception as e:
+        logger.error(f"Failed to read predictions: {e}")
+        return jsonify({"error": f"Failed to read predictions: {e}"}), 500
 
 
 if __name__ == "__main__":
