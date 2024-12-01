@@ -117,7 +117,7 @@ curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -
 ```
 
 
-5. en su navegador puede ir a http://localhost:5000/ donde encontrara un mensaje de bienvenida confirmando que se conectó a la API
+6. en su navegador puede ir a http://localhost:5000/ donde encontrara un mensaje de bienvenida confirmando que se conectó a la API
 
 ```bash
 http://localhost:5000/
