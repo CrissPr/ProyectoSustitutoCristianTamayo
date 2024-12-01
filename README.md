@@ -63,8 +63,43 @@ este ultimo ejecutara predicciones y permitira visualizar las predicciones de la
 **run-scripts.py:** Este script automatiza el flujo de trabajo ejecutando primero train.py para entrenar y luego ejecutando predict.py para generar las predicciones. También listara las predicciones de las primeras filas.
 
 
+**fase-3**
 
 
+**1.** clonar el repositorio:
+
+Abrir linea de comandos y clonar:
+
+```bash
+git clone https://github.com/CrissPr/ProyectoSustitutoCristianTamayo.git
+```
+
+Una vez clonado debera dirigirse al directorio fase-3 del repositorio clonado, para ello puede hacer uso de:
+
+```bash
+cd (ruta-carpeta-donde-se-clonó-el-repositorio)/ProyectoSustitutoCristianTamayo/fase-3
+```
+
+
+2. crear imagen
+
+```bash
+docker build -t titanic-api-test .
+```
+
+
+3. crear y correr contenedor en el puerto 5000
+
+```bash
+docker run -it -p 5000:5000 titanic-api-test
+```
+
+
+4. abrir otra consola de comandos y correr:
+
+```bash
+python client.py
+```
 
 
 
