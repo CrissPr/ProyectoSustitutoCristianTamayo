@@ -102,11 +102,20 @@ python client.py
 ```
 
 
-
 una vez halla ejecutado python client.py en una nueva terminal podra observar desde esa terminal como efectivamente el modelo se entrena y predice.
 
 Train Response: {'message': 'Model trained successfully'} \
 Predict Response: {'message': 'Predictions generated', 'predictions_file': 'predictions.csv'}
+
+5. tambien puede provar los endpoints de la siguiente manera:
+
+```bash
+curl -X POST http://localhost:5000/train
+```
+```bash
+curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -d "{\"input_file\": \"test.csv\", \"output_file\": \"predictions.csv\"}"
+```
+
 
 5. en su navegador puede ir a http://localhost:5000/ donde encontrara un mensaje de bienvenida confirmando que se conectó a la API
 
