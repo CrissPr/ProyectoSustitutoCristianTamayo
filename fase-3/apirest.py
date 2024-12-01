@@ -1,0 +1,66 @@
+from flask import Flask, jsonify, request
+from loguru import logger
+import os
+import subprocess
+
+app = Flask(__name__)
+
+MODEL_FILE = "model.pkl"
+TRAIN_DATA = "train.csv"
+TEST_DATA = "test.csv"
+PREDICTIONS_FILE = "predictions.csv"
+
+
+@app.route("/")
+def hello_world():
+    return jsonify({"message": "Welcome to the Titanic Model API"})
+
+
+@app.route("/train", methods=["POST"])
+def train_model():
+    if not os.path.exists(TRAIN_DATA):
+        return jsonify({"error": f"Training data '{TRAIN_DATA}' not found"}), 400
+
+    logger.info("Starting training process...")
+    result = subprocess.run(
+        ["python", "train.py", f"--data_file={TRAIN_DATA}", f"--model_file={MODEL_FILE}", "--overwrite_model"],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        logger.error(f"Training failed: {result.stderr}")
+        return jsonify({"error": result.stderr}), 500
+
+    logger.info("Training completed successfully.")
+    return jsonify({"message": "Model trained successfully"})
+
+
+@app.route("/predict", methods=["POST"])
+def predict():
+    data = request.json
+    input_file = data.get("input_file", TEST_DATA)
+    output_file = data.get("output_file", PREDICTIONS_FILE)
+
+    if not os.path.exists(MODEL_FILE):
+        return jsonify({"error": f"Model file '{MODEL_FILE}' not found"}), 400
+    if not os.path.exists(input_file):
+        return jsonify({"error": f"Input file '{input_file}' not found"}), 400
+
+    logger.info("Starting prediction process...")
+    result = subprocess.run(
+        ["python", "predict.py", f"--input_file={input_file}", f"--model_file={MODEL_FILE}", f"--predictions_file={output_file}"],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        logger.error(f"Prediction failed: {result.stderr}")
+        return jsonify({"error": result.stderr}), 500
+
+    logger.info("Prediction completed successfully.")
+    return jsonify({"message": "Predictions generated", "predictions_file": output_file})
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
+
+
