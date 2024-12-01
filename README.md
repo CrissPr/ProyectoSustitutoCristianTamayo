@@ -126,7 +126,9 @@ curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -
 http://localhost:5000/
 ```
 
-Se hizó un ultimo commit el cual se observa en los commits realizados, para modificar el apirest.py ya que el anterior entrenaba y predecia, pero no imprimia las predicciones, ahora con la modificacion si es posible vizualizar las predicciones, .
+Se hizó un ultimo commit el cual se observa en el historial de commits realizados para modificar el apirest.py ya que el anterior apirest.py entrenaba y predecia, pero no imprimia las predicciones, ahora con la modificacion si es posible vizualizar las predicciones. Los demas archivos se conservan igual.
+
+Gracias por la atencion.
 
 
 
